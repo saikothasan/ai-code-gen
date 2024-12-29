@@ -76,7 +76,7 @@ export default function TranslatePage() {
                   ))}
                 </SelectContent>
               </Select>
-              <Select value={targetLang} onValueSelect value={targetLang} onValueChange={setTargetLang}>
+              <Select value={targetLang} onValueChange={setTargetLang}>
                 <SelectTrigger className="w-[180px]">
                   <SelectValue placeholder="Target Language" />
                 </SelectTrigger>
@@ -111,4 +111,3 @@ export default function TranslatePage() {
     </div>
   )
 }
-
