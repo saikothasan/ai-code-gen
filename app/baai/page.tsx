@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Loader2 } from 'lucide-react'
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/hooks/use-toast"
 
 export default function BAAIPage() {
   const [input, setInput] = useState('')
