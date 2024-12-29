@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import Image from 'next/image'
 import { Loader2 } from 'lucide-react'
-import { useToast } from "@/components/ui/use-toast"
+import { useToast } from "@/hooks/use-toast"
 
 export default function ImagePage() {
   const [prompt, setPrompt] = useState('')
