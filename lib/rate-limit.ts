@@ -17,7 +17,7 @@ export default async function rateLimit(
   const redis = Redis.fromEnv()
   const tokenKey = `rate-limit:${ip}`
 
-  const { uniqueTokenPerInterval, interval } = config
+  const { uniqueTokenPerInterval = 500, interval = 60 } = config
 
   const [response] = await redis
     .multi()
@@ -35,4 +35,3 @@ export default async function rateLimit(
 
   return null
 }
-
