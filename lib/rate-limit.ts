@@ -19,13 +19,14 @@ export default async function rateLimit(
 
   const { uniqueTokenPerInterval = 500, interval = 60 } = config
 
-  const [response] = await redis
+  const [incrResponse, expireResponse] = await redis
     .multi()
     .incr(tokenKey)
     .expire(tokenKey, interval)
     .exec()
 
-  const currentUsage = response[1] as number
+  // Typecast the responses explicitly to numbers
+  const currentUsage = incrResponse as number
 
   const isRateLimited = currentUsage > uniqueTokenPerInterval
 
